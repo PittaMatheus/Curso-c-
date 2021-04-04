@@ -25,5 +25,22 @@ public:
     void imprimeData() const;
     bool anoBissexto() const;
     char ultimoDiaMes() const;
+    int compara(const Data &dt) const ; // primeira data implicita, oculta atraves do ponteiro this
+
+    inline bool operator==(const Data &dt) const;
+    inline bool operator<(const Data &dt) const;
+
+
 };
+
+inline bool Data::operator==(const Data &dt) const
+{
+    return compara(dt) == 0;
+
+}
+
+inline bool Data::operator<(const Data &dt) const
+{
+    return compara(dt) < 0;
+}
 #endif // DATA_H

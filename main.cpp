@@ -35,5 +35,39 @@ int main()
 
     cout << "Dt tem " << (int) dt.ultimoDiaMes() << " dias \n";
     cout << "Dt1 tem " << (int) dt1.ultimoDiaMes() << " dias \n";
+
+    const int result = dt.compara(dt1);
+    if(result == 0){
+        cout << "Dt e dt1 são iguais\n";
+    }else if(result < 0){
+        cout <<" dt e menor que dt1\n";
+    }
+    else
+        cout << "dt e maior que dt1 \n";
+
+    //if (dt.operator==(dt1))
+
+    if(dt == dt1){
+        cout << "Dt e dt1 são iguais\n";
+    }else if(dt < dt1){
+        cout <<" dt e menor que dt1\n";
+    }else{
+        cout << "dt e maior que dt1 \n";
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     return 0;
 }
