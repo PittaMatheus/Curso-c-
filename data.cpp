@@ -38,6 +38,7 @@ void Data::imprimeData() const
 
 bool Data::anoBissexto() const
 {
+    if(!bOk) return false;
     return (ano % 4 == 0 && ano % 100 != 0) ||
             ano % 400 ==0;
     /*
@@ -53,6 +54,7 @@ bool Data::anoBissexto() const
 
 char Data::ultimoDiaMes() const
 {
+    if (!bOk) return 0;
     if(mes == 2)
         return 28 + anoBissexto();
     if(mes <= 7){
