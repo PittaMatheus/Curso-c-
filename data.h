@@ -24,5 +24,6 @@ public:
     void alteraData(char d, char m, short a);
     void imprimeData() const;
     bool anoBissexto() const;
+    char ultimoDiaMes() const;
 };
 #endif // DATA_H

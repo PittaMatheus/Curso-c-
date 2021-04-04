@@ -18,7 +18,9 @@ void Data::alteraData(char d, char m, short a)
     mes = m;
     ano = a;
 
-    bOk = d >= 1 && d <= 31 && m >= 1 && m <= 12 && a >= aMin && a <= aMax;
+    bOk = m >= 1 && m <= 12 &&
+            a >= aMin && a <= aMax &&
+            d >= 1 && d <= ultimoDiaMes();
 }
 
 void Data::imprimeData() const
@@ -48,3 +50,24 @@ bool Data::anoBissexto() const
     return false;
     */
 }
+
+char Data::ultimoDiaMes() const
+{
+    if(mes == 2)
+        return 28 + anoBissexto();
+    if(mes <= 7){
+        return 30 + (mes & 1); // se o mes par, operacao binaria da 0
+    }
+    return 31 - (mes & 1);  // se o mes impar, operacao binaria da 1
+
+}
+
+
+
+
+
+
+
+
+
+
